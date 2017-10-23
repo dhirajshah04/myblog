@@ -1,0 +1,78 @@
+{% extends 'blog/base.html' %}
+{% load staticfiles %}
+
+{% block extra_stylesheets %}
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+{% endblock %}
+
+    {% block header-image %}
+
+        <div class="bcimg">
+            <div class="layer"></div>
+                <div class="h-text">
+                <!--
+                    {% if user.is_authenticated %}
+                     <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+                    <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
+                    {% endif %}
+                    -->
+                    <h1>Blog</h1>
+                     <hr class="hr">
+                </div>
+        </div>
+
+    {% endblock %}
+
+
+
+
+{% block content %}
+
+    <br><br>
+
+    {%	for	post in posts %}
+        <div class="post">
+            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+                <div class="date">
+                    <p>published: {{ post.published_date }}</p>
+                </div>
+                    {% if post.image %}
+                        <div class="media">
+                            <div class="media-left">
+                                <img src="{{ post.image.url }}" class="media-object" style="width:160px; height: 160px"/>
+                            </div>
+                    {% endif%}
+
+                                <div class="media-body">
+                                    <p>{{ post.text|linebreaksbr|truncatewords_html:100 }}
+                                    <br>
+                                    <a href="{% url 'post_detail' pk=post.pk %}"><button type="button" class="btn btn-info">Read More</button></a>
+                                    </p>
+                                </div>
+
+                        </div>
+
+                       <hr style="border-color: lightgrey; border-width: 1px;">
+        </div>
+
+     {% endfor %}
+
+
+<div class="text-center">
+    <div class="pagination">
+            <div class="section-inner clearfix">
+                <p>
+                    {% if posts.has_previous %}
+                        <a href="?page={{ posts.previous_page_number }}"><button type="button" class="btn btn-info">&lt; Prev</button></a> |
+                    {% endif %}
+
+                    {% if posts.has_next %}
+                        <a href="?page={{ posts.next_page_number }}"><button type="button" class="btn btn-info">Next &gt;</button></a>
+                    {% endif %}
+
+                    <span>Page {{ posts.number }} of {{ posts.paginator.num_pages }}</span>
+                </p>
+            </div>
+        </div>
+</div>
+{% endblock %}

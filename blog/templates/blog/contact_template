@@ -1,0 +1,8 @@
+Name:
+{{Name}}
+
+Email:
+{{Email}}
+
+Message:
+{{Message|safe|striptags}}

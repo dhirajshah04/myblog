@@ -1,0 +1,105 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>Dhiraj Shah</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static  'bower_components/bootstrap/dist/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static  'bower_components/bootstrap/dist/css/bootstrap-theme.min.css' %}">
+        <link rel="stylesheet" href="{% static  'bower_components/font-awesome/css/font-awesome.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        {% block extra_stylesheets %}
+        {% endblock %}
+    </head>
+
+<div>
+
+
+    {% block navigation %}
+        <!div class="container">
+            <nav class="navbar navbar-default">
+                <div class="navbar-header navbar-left">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="{% url 'index' %}"><span
+                            class="text text-success">Dhiraj Shah</span></a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="{% url 'post_list' %}">Blog</a></li>
+                        <li><a href="{% url 'about' %}">About</a></li>
+                        <li><a href="{% url 'contact' %}">Contact</a></li>
+                        {% if user.is_authenticated %}
+                        <li><a href="{% url 'logout' %}">Logout</a></li>
+                        <li><a href="{% url 'post_new' %}">Dashboard</a></li>
+                        {% else %}
+                            <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-user"></span></a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+
+
+            </nav>
+        <!/div>
+    {% endblock %}
+
+
+    {% block header-image %}
+    {% endblock %}
+
+
+    {% block home %}
+    {% endblock	%}
+
+    <div class="container">
+    {% block content %}
+    {% endblock %}
+    </div>
+
+    {% block about %}
+    {% endblock %}
+
+    {% block contact %}
+
+    {% endblock %}
+
+    <div class="container-fluid">
+        {% block footer %}
+            <footer class="footer text-center">
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <p>Made By <a href="http://facebook.com/dhiraj04" target="_blank"> Dhiraj Shah</a> with <i class="fa fa-heart fa-fw fa-lg text-danger"></i></p>
+                        </div>
+                        <div class="col-md-4">
+                            <a id="ffb" href="http://facebook.com/dhiraj04" target="_blank"><i class="fa fa-facebook fa-fw fa-lg"></i></a>
+                            <a id ="ftwitter" href="http://twitter.com/dhirajnpl" target="_blank"><i class="fa fa-twitter fa-fw fa-lg"></i></a>
+                            <a id ="finsta" href="http://instagram.com/dhiraj04" target="_blank"><i class="fa fa-instagram fa-fw fa-lg"></i></a><br>
+                        </div>
+                        <div class="col-md-4">
+                            <p>All Rights Reserved 2017</p>
+                        </div>
+                    </div>
+
+            </footer>
+
+        {% endblock %}
+    </div>
+
+<script src="{% static 'bower_components/jquery/dist/jquery.min.js' %}"></script>
+<script src="{% static 'bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+
+
+</body>
+</html>

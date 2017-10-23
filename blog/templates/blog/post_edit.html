@@ -1,0 +1,25 @@
+{%	extends	'blog/base.html'	%}
+{% load staticfiles %}
+
+
+{%	block	content	%}
+    <div class="row">
+        <div class="col-md-7">
+            <h1>New	post</h1>
+            <form	method="POST" enctype="multipart/form-data" class="post-form">{% csrf_token %}
+                {{ form.as_p }}
+                <button	type="submit"	class="save	btn	btn-default">Save</button>
+            </form>
+        </div>
+        <div class="col-md-4 col-md-offset-1">
+            <section class="vline">
+                <h3>Quick Option</h3>
+                <hr>
+                <ul>
+                    <li><a href="{% url 'post_draft_list' %}">Draft Post</a></li>
+                    <li><a href="{% url 'post_list' %}">Published Post</a></li>
+                </ul>
+            </section>
+        </div>
+    </div>
+{%	endblock	%}

@@ -1,0 +1,45 @@
+{% extends 'blog/base.html' %}
+{%  load staticfiles %}
+
+{% block extra_stylesheets %}
+    <link rel="stylesheet" href="{% static 'css/conabt.css' %}">
+{% endblock %}
+
+{% block header-image %}
+
+    <div class="acimg">
+        <div class="layer"></div>
+             <div class="h-text">
+                 <h1>About Me</h1>
+                  <hr class="hr">
+             </div>
+    </div>
+    <br>
+    <br>
+
+
+{% endblock %}
+
+{% block about %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div>
+                    <h2>Hi,<br> </h2>
+                    <P class="about">I am<a href="http://facebook.com/dhiraj04" target="_blank"> Dhiraj Shah</a>,from Biratnagar, Nepal.
+                        I am a computer Science Student studying BSc.CSIT at <a href="http://aimscollegebrt.com" target="_blank">AIMS College</a>,
+                        which is in Biratnagar.I am a Python/Django developer and interning at <a href="http://zeftware.com" target="_blank">Zeftware Solutions</a>
+                    </P>
+
+                </div>
+            </div>
+            <div class="col-md-5 col-md-offset-1">
+                <div>
+                    <img src="{% static 'img/dj.jpg' %}" class="img-responsive img-circle" style="width: 300px; height: 300px"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
