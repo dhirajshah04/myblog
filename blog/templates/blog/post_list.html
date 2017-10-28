@@ -44,7 +44,7 @@
                     {% endif%}
 
                                 <div class="media-body">
-                                    <p>{{ post.text|linebreaksbr|truncatewords_html:100 }}
+                                    <p>{{ post.text|safe|linebreaksbr|truncatewords_html:50 }}
                                     <br>
                                     <a href="{% url 'post_detail' pk=post.pk %}"><button type="button" class="btn btn-info">Read More</button></a>
                                     </p>

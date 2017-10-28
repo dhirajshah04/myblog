@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
+from ckeditor_uploader.fields import RichTextUploadingField
 
 
 class Post(models.Model):
@@ -12,7 +13,8 @@ class Post(models.Model):
     author = models.ForeignKey(User)
     title = models.CharField(max_length=200)
     image = models.ImageField(null=True, blank=True)
-    text = models.TextField()
+    #text = models.TextField()
+    text = RichTextUploadingField()
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(null=True, blank=True)
