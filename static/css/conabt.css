@@ -43,3 +43,8 @@
     border-width: 3px;
     border-color: white;
 }
+
+.about {
+    font-size: medium;
+    text-align: justify;
+}

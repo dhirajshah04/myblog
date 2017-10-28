@@ -39,3 +39,21 @@
     font-size: 25px;
     letter-spacing: 0.5px;
 }
+
+.latest {
+    background-color: lightblue;
+    left:0;
+    right:0;
+}
+
+.latesth2 {
+    color: black;
+    font-size: 40px;
+    font-style: normal;
+    text-shadow: 4px 4px 4px #aaa;
+    text-decoration: underline;
+}
+
+a:hover {
+    text-decoration: none;
+}
