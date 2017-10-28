@@ -1,0 +1,21 @@
+[[source]]
+
+name = "pypi"
+verify_ssl = true
+url = "https://pypi.python.org/simple"
+
+
+[dev-packages]
+
+
+
+[packages]
+
+django = "==1.11.6"
+django-ckeditor = "==5.3.0"
+django-js-asset = "==0.1.1"
+gunicorn = "==19.7.1"
+olefile = "==0.44"
+pillow = "==4.3.0"
+pytz = "==2017.2"
+whitenoise = "*"
