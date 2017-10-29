@@ -78,10 +78,34 @@ WSGI_APPLICATION = 'myblog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#    }
+#}
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#        'NAME': 'myblog',
+#        'USER': 'dhiraj',
+#        'PASSWORD': 'drj$hah',
+#        'HOST': 'localhost',
+#        'PORT': '',
+#    }
+#}
+
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd6kjp3uv854o71',
+        'USER': 'nkqrjvobfspbut',
+        'PASSWORD': '9c7f41e69f89ac4f25ead23acf2bf2492f96e9a1e00eb2500ec2322deadb7b51',
+        'HOST': 'ec2-54-235-80-137.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
@@ -169,5 +193,5 @@ CKEDITOR_CONFIGS = {
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
-db_from_env = dj_database_url.config()
-DATABASES['default'].update(db_from_env)
+#db_from_env = dj_database_url.config()
+#DATABASES['default'].update(db_from_env)
