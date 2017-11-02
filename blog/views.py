@@ -9,6 +9,7 @@ from django.template import Context
 from django.template.loader import  get_template
 from django.contrib.auth.decorators import login_required
 from myblog import helpers
+from django.contrib import messages
 
 def index(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
@@ -49,6 +50,7 @@ def contact(request):
             )
 
             Email.send()
+            messages.success(request, 'Message Sent Successfully')
             return render(request, 'blog/contact.html', {'form':form_class})
 
 
