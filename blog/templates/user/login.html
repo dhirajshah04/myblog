@@ -1,18 +1,41 @@
 {% extends "blog/base.html" %}
+{% load staticfiles %}
+
+{% block extra_stylesheets %}
+    <link rel="stylesheet" href="{% static 'css/conabt.css' %}">
+{% endblock %}
 
 
 {% block content %}
     <div class="row">
-        <div class="col-md-6 col-md-offset-4">
-            <h1>{{ title }}</h1>
-            <hr>
+        <div class="col-md-4 col-md-offset-4">
 
-            <form method="POST" action="" enctype="multipart/form-data">
+            <form method="POST" action="" class="well" enctype="multipart/form-data">
+                <h1 class="text-center login">{{ title }}</h1>
+                <br>
                 {% csrf_token %}
-                {{ form.as_p }}
 
-                <input type="submit" class="btn btn-default" value="{{ title }}">
+                <div class="input-group text-center">
+
+                    <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-user"></i></span>
+                {{ form.username }}
+                </div>
+                <br>
+
+                <div class="input-group text-center">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                {{ form.password }}
+
+                </div>
+                <br>
+
+                <button class="btn btn-primary btn-block main-bg-color"><i class="fa fa-sign-in fa-lg"></i>
+                Login
+                </button>
+
             </form>
+
+            <p class="text-center"><a href="{% url 'password_reset' %}">Forgot Password?</a></p>
 
         </div>
     </div>

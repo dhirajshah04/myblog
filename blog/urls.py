@@ -1,6 +1,6 @@
 from django.conf.urls import url
 from . import views
-
+from django.contrib.auth import views as auth_views
 from accounts.views import (login_view, logout_view, change_password)
 
 urlpatterns = [
@@ -17,4 +17,9 @@ urlpatterns = [
     url(r'^drafts/$', views.post_draft_list, name='post_draft_list'),
     url(r'^blog/(?P<pk>\d+)/publish/$', views.post_publish, name='post_publish'),
     url(r'^blog/(?P<pk>\d+)/remove/$', views.post_remove, name='post_remove'),
+    url(r'^user/password-reset/$', auth_views.password_reset, name='password_reset'),
+    url(r'^user/password-reset/done/$', auth_views.password_reset_done, name='password_reset_done'),
+    url(r'^user/reset/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
+        auth_views.password_reset_confirm, name='password_reset_confirm'),
+    url(r'^user/reset/done/$', auth_views.password_reset_complete, name='password_reset_complete'),
 ]

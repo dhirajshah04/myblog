@@ -33,14 +33,14 @@ ALLOWED_HOSTS = ['dhirajshah.herokuapp.com','localhost', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    'blog',
+    'accounts',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog',
-    'accounts',
     'ckeditor',
     'ckeditor_uploader',
 ]
@@ -61,7 +61,7 @@ ROOT_URLCONF = 'myblog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -87,29 +87,29 @@ WSGI_APPLICATION = 'myblog.wsgi.application'
 #    }
 #}
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#        'NAME': 'myblog',
-#        'USER': 'dhiraj',
-#        'PASSWORD': 'drj$hah',
-#        'HOST': 'localhost',
-#        'PORT': '',
-#    }
-#}
-
-
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd6kjp3uv854o71',
-        'USER': 'nkqrjvobfspbut',
-        'PASSWORD': '9c7f41e69f89ac4f25ead23acf2bf2492f96e9a1e00eb2500ec2322deadb7b51',
-        'HOST': 'ec2-54-235-80-137.compute-1.amazonaws.com',
-        'PORT': '5432',
+        'NAME': 'myblog',
+        'USER': 'dhiraj',
+        'PASSWORD': 'drj$hah',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
+
+
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#        'NAME': 'd6kjp3uv854o71',
+#        'USER': 'nkqrjvobfspbut',
+#        'PASSWORD': '9c7f41e69f89ac4f25ead23acf2bf2492f96e9a1e00eb2500ec2322deadb7b51',
+#        'HOST': 'ec2-54-235-80-137.compute-1.amazonaws.com',
+#        'PORT': '5432',
+#    }
+#}
 
 MESSAGE_TAGS = {
     messages.DEBUG: 'alert-info',
