@@ -1,0 +1,20 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-4 col col-md-offset-4">
+            <h1>Create an account</h1>
+            <p>Please, sign up using the following form:</p>
+            <br>
+            <form action="." method="post" class="well">
+                {{ user_form.as_p }}
+                {% csrf_token %}
+
+                <p><input type="submit" value="create my account"></p>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

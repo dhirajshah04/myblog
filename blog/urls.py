@@ -1,7 +1,7 @@
 from django.conf.urls import url
 from . import views
 from django.contrib.auth import views as auth_views
-from accounts.views import (login_view, logout_view, change_password)
+from accounts.views import (login_view, logout_view, change_password, register)
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
@@ -22,4 +22,5 @@ urlpatterns = [
     url(r'^user/reset/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
         auth_views.password_reset_confirm, name='password_reset_confirm'),
     url(r'^user/reset/done/$', auth_views.password_reset_complete, name='password_reset_complete'),
+    url(r'^register/$', register, name='register'),
 ]

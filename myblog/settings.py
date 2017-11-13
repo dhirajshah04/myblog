@@ -87,29 +87,29 @@ WSGI_APPLICATION = 'myblog.wsgi.application'
 #    }
 #}
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#        'NAME': 'myblog',
-#        'USER': 'dhiraj',
-#        'PASSWORD': 'drj$hah',
-#        'HOST': 'localhost',
-#        'PORT': '',
-#    }
-#}
-
-
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd6kjp3uv854o71',
-        'USER': 'nkqrjvobfspbut',
-        'PASSWORD': '9c7f41e69f89ac4f25ead23acf2bf2492f96e9a1e00eb2500ec2322deadb7b51',
-        'HOST': 'ec2-54-235-80-137.compute-1.amazonaws.com',
-        'PORT': '5432',
+        'NAME': 'myblog',
+        'USER': 'dhiraj',
+        'PASSWORD': 'drj$hah',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
+
+
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#        'NAME': 'd6kjp3uv854o71',
+#        'USER': 'nkqrjvobfspbut',
+#        'PASSWORD': '9c7f41e69f89ac4f25ead23acf2bf2492f96e9a1e00eb2500ec2322deadb7b51',
+#        'HOST': 'ec2-54-235-80-137.compute-1.amazonaws.com',
+#        'PORT': '5432',
+#    }
+#}
 
 MESSAGE_TAGS = {
     messages.DEBUG: 'alert-info',

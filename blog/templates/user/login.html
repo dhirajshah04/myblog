@@ -34,8 +34,10 @@
                 </button>
 
             </form>
-
-            <p class="text-center"><a href="{% url 'password_reset' %}">Forgot Password?</a></p>
+            <div class="text-center">
+            <p><a href="{% url 'register' %}">Register</a> ||
+            <a href="{% url 'password_reset' %}">Forgot Password?</a></p>
+            </div>
 
         </div>
     </div>
